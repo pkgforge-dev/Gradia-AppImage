@@ -22,5 +22,9 @@ export GTK_CLASS_FIX=1
 quick-sharun /usr/bin/gradia \
              /usr/lib/libgirepository*
 
+# Patch Gradia to use AppImage's directory
+sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gradia"' ./AppDir/bin/gradia
+sed -i '/^localedir/c\localedir = os.getenv("SHARUN_DIR", "/usr") + "/share/locale"' ./AppDir/bin/gradia
+
 # Turn AppDir into AppImage
 quick-sharun --make-appimage
