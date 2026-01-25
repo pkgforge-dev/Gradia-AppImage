@@ -20,7 +20,9 @@ export GTK_CLASS_FIX=1
 
 # Deploy dependencies
 quick-sharun /usr/bin/gradia \
-             /usr/lib/libgirepository*
+             /usr/lib/libgirepository* \
+             /usr/lib/gio/modules/libgiognutls.so* \
+             /usr/lib/libsoup*
 
 # Patch Gradia to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gradia"' ./AppDir/bin/gradia
