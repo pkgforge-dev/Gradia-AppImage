@@ -1,4 +1,4 @@
-# Gradia-AppImage 🐧
+# Gradia AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Gradia-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Gradia-AppImage/releases/latest)
 [![CI Build Status](https://github.com//pkgforge-dev/Gradia-AppImage/actions/workflows/appimage.yml/badge.svg)](https://github.com/pkgforge-dev/Gradia-AppImage/releases/latest)
