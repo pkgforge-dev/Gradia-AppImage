@@ -4,7 +4,7 @@ set -eu
 
 ARCH=$(uname -m)
 
-pacman -Syu --noconfirm webp-pixbuf-loader python-pandas tesseract
+pacman -Syu --noconfirm webp-pixbuf-loader python-pandas
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
