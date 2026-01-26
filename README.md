@@ -1,3 +1,5 @@
+<div align="center">
+
 # Gradia AppImage 🐧
 
 [![GitHub Downloads](https://img.shields.io/github/downloads/pkgforge-dev/Gradia-AppImage/total?logo=github&label=GitHub%20Downloads)](https://github.com/pkgforge-dev/Gradia-AppImage/releases/latest)
@@ -8,7 +10,12 @@
   <img src="https://raw.githubusercontent.com/AlexanderVanhee/Gradia/refs/heads/master/assets/be.alexandervanhee.gradia.svg" width="128" />
 </p>
 
-* [Upstream URL](https://github.com/AlexanderVanhee/Gradia)
+
+| Latest Stable Release | Upstream URL |
+| :---: | :---: |
+| [Click here](https://github.com/pkgforge-dev/Gradia-AppImage/releases/latest) | [Click here](https://github.com/AlexanderVanhee/Gradia) |
+
+</div>
 
 ---
 
