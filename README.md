@@ -27,6 +27,7 @@ Self-updater doesn't run if AppImage managers like [am](https://github.com/ivan-
   </a>
 </details>
 
----
-
 More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/)
+
+## Known quirk
+- OCR models download successfully, but OCR button doesn't show at all, hence not working.
