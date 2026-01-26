@@ -25,7 +25,8 @@ quick-sharun /usr/bin/gradia \
              /usr/lib/libsoup* \
              /usr/bin/sed \
              /usr/bin/tee \
-             /usr/bin/date
+             /usr/bin/date \
+             /usr/bin/tesseract
 
 # Patch Gradia to use AppImage's directory
 sed -i '/^pkgdatadir/c\pkgdatadir = os.getenv("SHARUN_DIR", "/usr") + "/share/gradia"' ./AppDir/bin/gradia
