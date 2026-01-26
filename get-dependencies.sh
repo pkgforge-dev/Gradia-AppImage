@@ -31,4 +31,5 @@ echo '
 ' >> ./gradia_ocr.patch
 
 wget --retry-connrefused --tries=30 https://aur.archlinux.org/cgit/aur.git/plain/PKGBUILD?h=gradia -O ./PKGBUILD
+sed 's/770b874fed71ec84a6a190b6e931be9189f512b4433eaef8996dca32644472d7/d88fc3a8c08be1832a9d08262ac1b7a76f9c8879064e11bf48fb061b9b066c53/g' ./PKGBUILD
 make-aur-package
