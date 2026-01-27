@@ -37,6 +37,6 @@ There is also a prompt and config for opting-out of self-updates if desired.
 
 More at: [AnyLinux-AppImages](https://pkgforge-dev.github.io/Anylinux-AppImages/)
 
-## Known quirk
+## Known quirks
 - OCR models download successfully, but OCR button doesn't show at all, hence not working.
 - App depends on screenshot XDG portal for screenshot functionality
