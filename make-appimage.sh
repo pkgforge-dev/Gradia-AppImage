@@ -3,8 +3,7 @@
 set -eu
 
 ARCH=$(uname -m)
-VERSION=$(pacman -Q gradia | awk '{print $2; exit}')
-export ARCH VERSION
+export ARCH
 export OUTPATH=./dist
 export ADD_HOOKS="self-updater.hook"
 export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}|latest|*$ARCH.AppImage.zsync"
@@ -16,13 +15,14 @@ export GTK_DIR=gtk-4.0
 export DEPLOY_LOCALE=1
 export STARTUPWMCLASS=be.alexandervanhee.gradia # Default to Wayland's wmclass. For X11, GTK_CLASS_FIX will force the wmclass to be the Wayland one.
 export GTK_CLASS_FIX=1
-export PATH_MAPPING='/usr/lib/gradia:${SHARUN_DIR}/lib/gradia'
 
 # Deploy dependencies
 quick-sharun /usr/bin/gradia \
              /usr/lib/libgirepository* \
              /usr/lib/gio/modules/libgiognutls.so* \
              /usr/lib/libsoup* \
+             /usr/bin/bash \
+             /usr/bin/curl \
              /usr/bin/sed \
              /usr/bin/tee \
              /usr/bin/date \

@@ -1,0 +1,13 @@
+diff --git a/gradia/ui/image_exporters.py b/gradia/ui/image_exporters.py
+index 5a3477b..2db3e4a 100644
+--- a/gradia/ui/image_exporters.py
++++ b/gradia/ui/image_exporters.py
+@@ -342,7 +342,7 @@ class CommandLineExporter(BaseImageExporter):
+ 
+             logger.info("running custom command: " + command)
+             process = subprocess.Popen(
+-                    ["/usr/bin/env", "bash", "-c", command],
++                    ["bash", "-c", command],
+                     stdout=subprocess.PIPE,
+                     stderr=subprocess.PIPE
+                 )

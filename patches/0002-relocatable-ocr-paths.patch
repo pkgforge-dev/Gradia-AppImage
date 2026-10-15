@@ -1,0 +1,41 @@
+diff --git a/gradia/backend/ocr.py b/gradia/backend/ocr.py
+index 6a45a4e..c0b11a3 100644
+--- a/gradia/backend/ocr.py
++++ b/gradia/backend/ocr.py
+@@ -30,6 +30,12 @@ from gradia.backend.settings import Settings
+ from gradia.constants import app_id, ocr_enabled
+ from gradia.constants import ocr_tesseract_cmd, ocr_original_tessdata
+ 
++# Resolve the tesseract binary and the bundled tessdata relative to the
++# mounted AppImage instead of the build-time prefix.
++if os.environ.get("SHARUN_DIR"):
++    ocr_tesseract_cmd = os.path.join(os.environ["SHARUN_DIR"], "bin", "tesseract")
++    ocr_original_tessdata = os.path.join(os.environ["SHARUN_DIR"], "share", "tessdata")
++
+ 
+ logger = Logger()
+ 
+@@ -45,7 +51,7 @@ class OCR:
+     def __init__(self, window=None):
+         self.tesseract_cmd = ocr_tesseract_cmd
+         self.original_tessdata_dir = ocr_original_tessdata
+-        self.user_tessdata_dir = os.path.expanduser(f"~/.var/app/{app_id}/data/tessdata")
++        self.user_tessdata_dir = os.path.join(GLib.get_user_data_dir(), "tessdata")
+         self.window = window
+ 
+         pytesseract.pytesseract.tesseract_cmd = self.tesseract_cmd
+diff --git a/meson.build b/meson.build
+index a222c56..e62d35d 100644
+--- a/meson.build
++++ b/meson.build
+@@ -62,8 +62,8 @@ else
+ endif
+ 
+ # OCR Directories
+-OCR_TESSERACT_CMD = '/app/bin/tesseract'
+-OCR_ORIGINAL_TESSDATA_DIR = '/app/share/tessdata'
++OCR_TESSERACT_CMD = join_paths(get_option('prefix'), 'bin', 'tesseract')
++OCR_ORIGINAL_TESSDATA_DIR = join_paths(get_option('prefix'), 'share', 'tessdata')
+ 
+ enable_ocr = get_option('enable-ocr')
+ 
